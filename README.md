@@ -1,6 +1,6 @@
 # Project Title
 
-[Short description of your project]
+BigBytes Blog is a versatile blogging site designed for gamers, food enthusiasts, and coders. It provides users with the ability to create, publish, and share blog posts on a variety of topics within these domains. Built using Python, SQLite, Flask, HTML, JavaScript, CSS, and Bootstrap, this platform offers a seamless experience for both content creators and readers.
 
 ## Getting Started
 
