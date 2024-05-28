@@ -12,6 +12,16 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm
 import smtplib
 import os
+import logging
+
+# Setup logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+logger.info(f"PORT: {os.environ.get('PORT')}")
+logger.info(f"DB_URI2: {os.environ.get('DB_URI2')}")
+logger.info(f"SECRET_KEY: {os.environ.get('dev_key')}")
+logger.info(f"GM_PASS: {os.environ.get('gm_pass')}")
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('dev_key')
@@ -253,4 +263,6 @@ def contact():
 
 
 if __name__ == "__main__":
-    app.run(debug=False, port=5002)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
+
